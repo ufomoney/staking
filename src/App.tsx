@@ -1,26 +1,35 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, {useEffect, useState} from 'react';
+import TokenMintForm from "./components/TokenMintForm";
+import Web3 from 'web3'
+import {Config} from "./components/Config";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export default function App () {
+    const [account, setAccount] = useState('');
+    const [contract, setContract] = useState<any>();
+
+    console.log(account)
+
+    async function connect() {
+        if (+Web3.givenProvider.chainId !== Config.chainId) {
+            alert('Not bsc, please change chain id');
+            return
+        }
+
+        const web3 = new Web3(Web3.givenProvider);
+        const accounts = await web3.eth.requestAccounts();
+
+        setContract(new web3.eth.Contract(JSON.parse(Config.contractAbi), Config.contractAddress));
+
+        setAccount(accounts[0]);
+    }
+
+
+    return (
+        <div>
+            { account === '' ?
+                <button onClick={connect}>connectWallet</button>
+                : <TokenMintForm contract={contract} address={account}/>
+            }
+        </div>
+    );
 }
-
-export default App;
