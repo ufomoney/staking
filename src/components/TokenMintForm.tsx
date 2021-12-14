@@ -9,13 +9,14 @@ export default function(props: any) {
     ] = React.useState(0);
     const tokenAmountRef = React.useRef<any>(tokenStakedAmount);
 
-
     const changeTokenAmount = (event: React.ChangeEvent<HTMLInputElement>) => setTokenStakedAmount(
         +event.currentTarget.value.replace(/[^0-9]+/g, "")
     );
 
+
     const mint = async () => {
-        contract.methods.mint(tokenStakedAmount).send({from: address}).then(console.log)
+        const cost = await contract.methods.cost().call()
+        contract.methods.mint(tokenStakedAmount).send({from: address, value: cost * tokenStakedAmount}).then(console.log)
     }
 
     return (

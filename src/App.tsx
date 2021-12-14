@@ -7,8 +7,6 @@ export default function App () {
     const [account, setAccount] = useState('');
     const [contract, setContract] = useState<any>();
 
-    console.log(account)
-
     async function connect() {
         if (+Web3.givenProvider.chainId !== Config.chainId) {
             alert('Not bsc, please change chain id');
