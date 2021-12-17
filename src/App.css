@@ -24,7 +24,7 @@ body {
   min-height: 50px;
   min-width: 150px;
   font-size: 25px;
-  color: #313149;
+  color: #fff;
   border: 5px solid transparent;
   border-radius: 15px;
   display: inline-block;
@@ -55,7 +55,7 @@ body {
 }
 
 .main__btn:hover {
-  color: #fff;
+  color: #007eff;
   transform: translateY(-0.25em);
   box-shadow: 0 -0.5em 0.5em -0.4em var(--yellow),
     0 0.5em 0.5em -0.4em var(--violet);
