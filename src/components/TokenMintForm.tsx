@@ -1,4 +1,5 @@
 import React from 'react';
+import { useState } from 'react';
 
 export default function (props: any) {
   const { contract, address } = props;
@@ -18,7 +19,7 @@ export default function (props: any) {
   };
 
   return (
-    <>
+    <div className="mint_form">
       <div className="form">
         <input
           id="inp_text"
@@ -30,13 +31,12 @@ export default function (props: any) {
           onChange={changeTokenAmount}
         />
         <label htmlFor="#inp_text" className="label_name">
-          <span className="content_name">ENTER A NUMBER</span>
+          <span className="content_name">Enter the amount</span>
         </label>
       </div>
-
       <button className="main__btn_mint" onClick={mint}>
         Mint
       </button>
-    </>
+    </div>
   );
 }

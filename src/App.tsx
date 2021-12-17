@@ -34,7 +34,17 @@ export default function App() {
           Connect Wallet
         </button>
       ) : (
-        <TokenMintForm contract={contract} address={account} />
+        <>
+          <ul className="instruction_list">
+            How to participate:
+            <li>Press «ENTER THE AMOUNT»</li>
+            <li>Enter the number of tokens you want to purchase</li>
+            <li>Click «MINT» button</li>
+            <li>Pay for the tokens and the commission</li>
+            <li>Each token costs 0.05 BNB</li>
+          </ul>
+          <TokenMintForm contract={contract} address={account} />
+        </>
       )}
     </div>
   );
