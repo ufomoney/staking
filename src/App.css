@@ -48,10 +48,16 @@ body {
   bottom: 0;
   padding: 3px;
   border-radius: 15px;
-  background: linear-gradient(to bottom, #9c20aa, #0038ff);
-  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  -webkit-mask-composite: destination-out;
-  mask-composite: exclude;
+  border: 1px double transparent;
+  border-radius: 7px;
+  background-image: linear-gradient(#0b1a38, #220707fc),
+    linear-gradient(var(--purple), var(--blue));
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+  -webkit-border-radius: 7px;
+  -moz-border-radius: 7px;
+  -ms-border-radius: 7px;
+  -o-border-radius: 7px;
 }
 
 .main__btn:hover {
@@ -61,9 +67,8 @@ body {
 }
 
 .main__btn:hover::before {
-  background: linear-gradient(to bottom, #d6e80e, #ff00f5);
-  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  -webkit-mask-composite: destination-out;
+  background-image: linear-gradient(#0b1a38, #220707fc),
+    linear-gradient(var(--yellow), var(--violet));
 }
 
 .box {
