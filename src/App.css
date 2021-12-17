@@ -90,9 +90,10 @@ body {
   border: none;
   background: none;
   outline: none;
-  color: var(--green);
+  color: #fff;
   text-transform: uppercase;
   font-size: 18px;
+  text-align: center;
 }
 
 .label_name {
@@ -122,8 +123,9 @@ body {
 .content_name {
   position: absolute;
   bottom: 5px;
-  left: 0;
   transition: all 0.3s ease;
+  width: 100%;
+  text-align: center;
 }
 
 .main__input:focus + .label_name .content_name,
@@ -131,6 +133,10 @@ body {
   transform: translateY(-150%);
   font-size: 14px;
   color: var(--green);
+  -webkit-transform: translateY(-150%);
+  -moz-transform: translateY(-150%);
+  -ms-transform: translateY(-150%);
+  -o-transform: translateY(-150%);
 }
 
 .main__input:focus + .label_name::after,
@@ -171,12 +177,16 @@ body {
     flex-direction: column;
   }
 
+  .main__input {
+    width: 150px;
+  }
+
   .main__btn_mint {
     margin-left: 0;
     margin-top: 40px;
   }
 
   .content_name {
-    left: 12%;
+    font-size: 17px;
   }
 }
