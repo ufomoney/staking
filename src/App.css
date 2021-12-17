@@ -55,7 +55,6 @@ body {
 }
 
 .main__btn:hover {
-  color: #007eff;
   transform: translateY(-0.25em);
   box-shadow: 0 -0.5em 0.5em -0.4em var(--yellow),
     0 0.5em 0.5em -0.4em var(--violet);
