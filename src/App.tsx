@@ -41,7 +41,7 @@ export default function App() {
             <li>Enter the number of tokens you want to purchase</li>
             <li>Click «MINT» button</li>
             <li>Pay for the tokens and the commission</li>
-            <li>Each token costs 0.05 BNB</li>
+            <li>Each token costs 0.4 BNB</li>
           </ul>
           <TokenMintForm contract={contract} address={account} />
         </>
