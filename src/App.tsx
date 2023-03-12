@@ -24,7 +24,7 @@ export default function App() {
       )
     );
 
-    setAccount(accounts[0]);
+    // setAccount(accounts[0]);
   }
 
   return (
