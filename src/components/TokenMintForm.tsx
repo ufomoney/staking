@@ -12,8 +12,7 @@ export default function (props: any) {
 
   const mint = async () => {
     // const cost = await contract.methods.cost().call();
-    contract.methods
-      .stake(tokenStakedAmount);
+    contract.methods.stake(tokenStakedAmount).call();
       // .send({ from: address, value: cost * tokenStakedAmount })
       // .then(console.log);
   };
