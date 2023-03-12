@@ -11,7 +11,7 @@ export default function (props: any) {
     setTokenStakedAmount(+event.currentTarget.value.replace(/[^0-9]+/g, ''));
 
   const mint = async () => {
-    const cost = await contract.methods.cost().call();
+    // const cost = await contract.methods.cost().call();
     contract.methods
       .stake(tokenStakedAmount);
       // .send({ from: address, value: cost * tokenStakedAmount })
