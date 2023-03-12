@@ -10,7 +10,7 @@ export default function App() {
 
   async function connect() {
     if (+Web3.givenProvider.chainId !== Config.chainId) {
-      alert('Not bsc, please change chain id');
+      alert('Select Sepolia Network');
       return;
     }
 
